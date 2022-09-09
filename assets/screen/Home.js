@@ -131,35 +131,14 @@ export default Home = () => {
   const arr = [
     [one, five1, two, nine1, three, four, five, six, seven],
     [eight1, nine, ten, eleven, eleven1, twile, thirteen1, fourteen, fifteen1],
-    [
-      sixteen,
-      seventeen,
-      eighteen,
-      nineteen1,
-      nineteen2,
-      nineteen,
-      ninetee3,
-      ninetee4,
-      twenty,
-    ],
+    [sixteen,seventeen,eighteen,nineteen1,nineteen2,nineteen,ninetee3,ninetee4,twenty,],
     [tw1, tw2, tw3, tw4, twenty1, tw5, tw6, tw7, twenty2],
     [twenty3, tw8, twenty4, tw9, twenty5, tw10, twenty6, twenty7, twenty8],
     [th1, twenty9, th2, th3, thirty, th4, th5, th6, th7],
     [th8, thirty1, th9, th10, thirty2, thirty3, thirty4, thirty5, thirty6],
     [thirty7, four1, four2, thirty8, thirty9, fourty, four3, fourty1, four4],
-    [
-      fourty2,
-      fourty3,
-      fourty4,
-      fourty5,
-      four5,
-      fourty6,
-      fourty7,
-      four6,
-      fourty8,
-    ],
+    [fourty2,fourty3,fourty4,fourty5,four5,fourty6,fourty7,four6,fourty8],
   ];
-
   const ansarr = [
     [7, 5, 4, 9, 1, 3, 8, 6, 2],
     [8, 6, 2, 5, 4, 6, 3, 9, 7],
@@ -171,7 +150,9 @@ export default Home = () => {
     [6, 7, 5, 1, 2, 8, 4, 3, 9],
     [2, 4, 1, 7, 3, 9, 5, 8, 6],
   ];
-
+ // Winner state
+const [winner , setWinner] = useState(true)
+//  
   const [arryval, setArryVal] = useState(arr);
   const numarr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const displayarr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -179,10 +160,6 @@ export default Home = () => {
   const seletcolumn = (index, index1, column, row) => {
     setSelectedRow(row);
     setSelectedColumn(column);
-    // console.log('column ---->', column);
-    // console.log("🚀  row", row)
-    // console.log('🚀 ~ file: Home.js ~ line 84 ~ seletcolumn ~ index1', index1);
-    // console.log('🚀 ~ file: Home.js ~ line 84 ~ seletcolumn ~ index', index);
 
     //Row1
     console.log('index---->', index, 'index1----->', index1);
@@ -492,7 +469,6 @@ export default Home = () => {
         one == seventeen ||
         one == eighteen
       ) {
-        console.log('----->dsf');
         return '#FFCCCB';
       } else {
         return 'lightcyan';
@@ -796,7 +772,7 @@ export default Home = () => {
       } else {
         return 'lightcyan';
       }
-      return twenty == undefined ? 'white' : 'lightcyan';
+
     }
 
     // -----------row4-------------//3*2
@@ -1290,7 +1266,6 @@ export default Home = () => {
         return 'lightcyan';
       }
 
-      return fourty6 == undefined ? 'white' : 'lightcyan';
     }
     // column3
     if (index == 8 && index1 == 6) {
@@ -1341,27 +1316,51 @@ export default Home = () => {
       return 'black';
     }
   };
-for(let i=0 ; i<=8 ; i++){
+// arr.filter((i) =>{
+//   ansarr.filter((i2)=>{
+//   i.filter((item)=>{
+//     console.log('item--->', item);
 
-}
-// arr.map((item1) => {
-//   console.log('-====>',item1);
-//   ansarr.map((item2) =>{
-// if(
-//   (item1[0] == item2[0]) &&
-//   (item1[1] == item2[1]) &&
-//   (item1[2] == item2[2]) &&
-//   (item1[3] == item2[3]) &&
-//   (item1[4] == item2[4]) &&
-//   (item1[5] == item2[5]) &&
-//   (item1[6] == item2[6]) &&
-//   (item1[7] == item2[7]) &&
-//   (item1[8] == item2[8]) ){
-// console.log('Winner');
+//   i2.filter((item2) => {
+//     console.log("🚀 ---------------------------------> item2", item2)
+
+
+// if(item === item2 && item2 !== undefined ){
+//   console.log('-------------->',item);
 // }
+
 //   })
-// 	}
-// )
+//   })})
+// })
+// let flatArray = []
+// console.log("🚀 ~ file: Home.js ~ line 1334 ~ //i.filter ~ flatArray", flatArray)
+// let a = arr
+// function flattenArray (a) {
+   
+//   a.forEach((item) => Array.isArray(item)? flattenArray(item):flatArray.push(item))
+
+
+//   return flatArray ;
+//  }
+ 
+//  console.log(flattenArray(a).length)
+ 
+// let b =ansarr.join(',').split(',').map(Number) 
+// console.log("🚀 ~ file: Home.js ~ line 1322 ~ b", b);
+
+ if(one == 7 && two == 4 &&  three ==1  &&  four == 3 &&  five ==8 &&  six ==6  &&  seven == 2 && 
+    nine == 1 &&  ten ==2 &&  eleven == 5  &&  twile ==6 &&   fourteen == 9  && 
+    sixteen == 3 && seventeen == 6 && eighteen == 9 && nineteen == 7  && twenty == 5 && 
+    twenty1 == 7 && twenty2 == 4 && 
+    twenty3 == 4 && twenty4 == 6 && twenty5 == 9 && twenty6 == 7 &&  twenty7 == 5 &&  twenty8 == 8 && 
+    twenty9 == 9 && thirty == 5 &&
+    thirty1 == 8 && thirty2 == 6 &&  thirty3 == 5 &&  thirty4 == 2 && thirty5 == 7 &&  thirty6 == 1 && 
+    thirty7 == 6 && thirty8 == 1 &&  thirty9 == 2 &&  fourty == 8 && fourty1 == 3 && 
+    fourty2 == 2 && fourty3 == 4 && fourty4 == 1 && fourty5 == 7 && fourty6 == 9 && fourty7 == 5 && fourty8 == 6 )
+    {
+    alert('Winner')
+    }
+
   return (
     <SafeAreaView style={{alignItems: 'center' }}>
       <Text style={{fontWeight: '500', fontSize: 20, padding: 15}}>SUDOKU</Text>
@@ -1399,6 +1398,9 @@ for(let i=0 ; i<=8 ; i++){
           );
         })}
       </ScrollView>
+
+
+
 <View style={{flexDirection:'row' , flexWrap:'wrap' , width:'60%' , margin:'8%' }}>
      
         {numarr.map((number, index) => {
@@ -1475,8 +1477,10 @@ for(let i=0 ; i<=8 ; i++){
           </Text>
         </TouchableHighlight>
       </View>
+  
     </SafeAreaView>
   );
+
 };
 
 // if (one == undefined ) {
@@ -1892,3 +1896,6 @@ for(let i=0 ; i<=8 ; i++){
 // ) {
 //   console.log('seven---->', 'have same value');
 // }
+
+
+
